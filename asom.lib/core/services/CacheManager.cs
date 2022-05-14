@@ -1,14 +1,12 @@
 using System;
 using System.Text;
 using System.Threading.Tasks;
-using DataLookupService.Business.Core.Abstract;
-using DataLookupService.Business.Services;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
-namespace DataLookupService.Business.Core
+namespace asom.lib.core.services
 {
     public class CacheManager<T> : ICacheManager<T>
     {
@@ -23,7 +21,7 @@ namespace DataLookupService.Business.Core
 
         public async Task<T> Get(string cacheKey)
         {
-            if (string.IsNullOrEmpty(cacheKey)) return default;
+            if (string.IsNullOrEmpty(cacheKey)) return default(T);
             cacheKey = formatCacheKey(cacheKey);
             _logger.LogInformation($"Get Cache called with Key :{cacheKey} of type {typeof(T)}");
 

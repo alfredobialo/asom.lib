@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Text.RegularExpressions;
 
-namespace asom.lib.core.Util
+namespace asom.lib.core.util
 {
     public static class Helper
     {

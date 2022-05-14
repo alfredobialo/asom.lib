@@ -1,6 +1,6 @@
 using System;
 
-namespace asom.lib.core.Util
+namespace asom.lib.core.util
 {
     /// <summary>
     /// Use the DateUtil Class to display friendly date interval.

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace asom.lib.core.Util
+namespace asom.lib.core.util
 {
     /// <summary>
     /// Represents a class that can convert numeric numbers to Textual Equivalent
@@ -57,7 +57,7 @@ namespace asom.lib.core.Util
         /// <summary>
         /// Converts a numeric number to a Text
         /// </summary>
-        /// <param name="value">a positive interger to convert</param>
+        /// <param name="value">a positive integer to convert</param>
         /// <returns>Converted Text</returns>
         public string NumericText(long value)
         {
@@ -265,11 +265,7 @@ namespace asom.lib.core.Util
 
         bool IsInThousandth(long value)
         {
-            bool res = false;
-            if ((value.ToString().Length >= 4) && (value.ToString().Length <= 6))
-            {
-                res = true;
-            }
+            bool res = (value.ToString().Length >= 4) && (value.ToString().Length <= 6);
 
             return res;
         }

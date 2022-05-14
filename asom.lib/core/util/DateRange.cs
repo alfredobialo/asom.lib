@@ -1,6 +1,6 @@
 using System;
 
-namespace asom.lib.core.Util
+namespace asom.lib.core.util
 {
     public class DateRange
     {

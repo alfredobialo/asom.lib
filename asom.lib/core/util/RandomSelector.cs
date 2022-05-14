@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace asom.lib.core.Util
+namespace asom.lib.core.util
 {
     public class RandomSelector<T, U> where T : List<U>, new()
     {

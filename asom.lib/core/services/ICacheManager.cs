@@ -1,7 +1,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace DataLookupService.Business.Services
+namespace asom.lib.core.services
 {
     public interface ICacheManager<T>
     {
