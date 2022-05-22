@@ -12,8 +12,8 @@
         <PackageTags>basic lib, asom, lib, utils, util</PackageTags>
         <PackageReleaseNotes>This release is just for basic Utility class and basic Foundation class</PackageReleaseNotes>
         <Company>Asom Services Inc</Company>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-        <FileVersion>1.0 Pre</FileVersion>
+        <AssemblyVersion>1.0.0.10</AssemblyVersion>
+        <FileVersion>1.1 Pre</FileVersion>
         <SignAssembly>true</SignAssembly>
         <AssemblyOriginatorKeyFile>asomKey.snk</AssemblyOriginatorKeyFile>
         <PublicSign>true</PublicSign>
