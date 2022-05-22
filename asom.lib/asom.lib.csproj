@@ -17,6 +17,9 @@
         <SignAssembly>true</SignAssembly>
         <AssemblyOriginatorKeyFile>asomKey.snk</AssemblyOriginatorKeyFile>
         <PublicSign>true</PublicSign>
+        <PackageProjectUrl>https://github.com/alfredobialo/asom.lib</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/alfredobialo/asom.lib</RepositoryUrl>
+        <RepositoryType>Public</RepositoryType>
     </PropertyGroup>
 
     <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
