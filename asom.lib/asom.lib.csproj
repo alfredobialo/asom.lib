@@ -20,6 +20,7 @@
         <PackageProjectUrl>https://github.com/alfredobialo/asom.lib</PackageProjectUrl>
         <RepositoryUrl>https://github.com/alfredobialo/asom.lib</RepositoryUrl>
         <RepositoryType>Public</RepositoryType>
+        <PackageVersion>1.0.10</PackageVersion>
     </PropertyGroup>
 
     <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
