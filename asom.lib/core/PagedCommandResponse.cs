@@ -40,6 +40,8 @@ namespace asom.lib.core
             PageSize = !UsePagination ? TotalRecord : PageSize;
             CurrentPage  =  CurrentPage < 1 ? 1 : CurrentPage;
             CurrentPage = CurrentPage > TotalPages ? TotalPages : CurrentPage;
+            if (TotalRecord == 0)
+                return source;
             return this.UsePagination
                 ? source.Skip<TSource>(this.PageSize * (this.CurrentPage - 1)).Take<TSource>(this.PageSize)
                 : source;
@@ -50,6 +52,8 @@ namespace asom.lib.core
             PageSize = !UsePagination ? TotalRecord : PageSize;
             CurrentPage  =  CurrentPage < 1 ? 1 : CurrentPage;
             CurrentPage = CurrentPage > TotalPages ? TotalPages : CurrentPage;
+            if (TotalRecord == 0)
+                return source;
             return this.UsePagination
                 ? source.Skip<TSource>(this.PageSize * (this.CurrentPage - 1)).Take<TSource>(this.PageSize)
                 : source;

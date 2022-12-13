@@ -51,7 +51,7 @@
         public static string RightString(string text, int len)
         {
             if (len > text.Length) return text;
-            string res = text.Substring((text.Length - 1) - (len - 1), len);
+            string res = text.Substring(text.Length - len);
             return res;
         }
     }
