@@ -10,19 +10,20 @@ namespace asom.lib.core.util
             string id = Guid.NewGuid().ToString().Replace("-", "").ToLower();
             id = id.Substring(0, 4) + id.Substring(7, 6);
             return id;
-        }  
-        
+        }
+
         public static string NewId(int maxLength)
         {
             string id = Guid.NewGuid().ToString().Replace("-", "").ToLower();
             id = id.Substring(0, 4) + id.Substring(7, 6);
-            
+
             if (id.Length < maxLength)
-            { 
+            {
                 string id2 = Guid.NewGuid().ToString().Replace("-", "").ToLower();
                 var remaining = maxLength - id.Length;
                 id += id2.Substring(3, remaining);
             }
+
             return id;
         }
 
@@ -32,29 +33,25 @@ namespace asom.lib.core.util
             // remove alphabets
             id = string.Concat(id.Where(x => char.IsDigit(x)));
             int len = id.Length;
-            id = id.Substring(0, len >= 10 ? 10 : len) + DateTime.UtcNow.Millisecond + DateTime.UtcNow.Minute + DateTime.UtcNow.Month;
+            var date = $"{DateTime.UtcNow.Millisecond}{DateTime.UtcNow.Minute}{DateTime.UtcNow.Month}";
+            id = id.Substring(0, len >= 10 ? 10 : len) + date;
             return id;
         }
-        
+
         public static string NewNumericId(int maxLength)
         {
             string id = Guid.NewGuid().ToString().Replace("-", "").ToLower();
             // remove alphabets
             id = string.Concat(id.Where(x => char.IsDigit(x)));
             int len = id.Length;
-            var date = DateTime.UtcNow.Millisecond + DateTime.UtcNow.Minute + DateTime.UtcNow.Month;
-            int remainingLength = maxLength - date;
-            if (remainingLength > 0)
-            {
-                id = id.Substring(0, len >= remainingLength ? remainingLength : len) + date;
-            }
-            else
-            {
-                id = date.ToString()+id.Substring(3,5);
-            }
+            var date = $"{DateTime.UtcNow.Millisecond}{DateTime.UtcNow.Minute}{DateTime.UtcNow.Month}";
+            
+            id = id.Substring(0, len >= maxLength ? maxLength : len);
+            if (id.Length < maxLength) id += date;
             
             return id;
         }
+
         public static string DuplicateString(string value, int num)
         {
             string res = "";
