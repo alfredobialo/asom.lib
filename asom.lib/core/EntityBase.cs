@@ -1,4 +1,6 @@
 using System;
+using System.Linq;
+using asom.lib.core.util;
 
 namespace itrex.businessObjects.model.core
 {
@@ -34,5 +36,21 @@ namespace itrex.businessObjects.model.core
         }
         public DateTime? DateCreated { get; set; }
         public bool? IsActive { get; set; }
+  
+        public static string NewId() =>
+            Util.NewId();
+        
+        
+        public static string NewId(int maxLength) =>
+            Util.NewId(maxLength);
+
+
+
+        public static string NewNumericId() =>
+            Util.NewNumericId();
+
+        public static string NewNumericId(int maxLength) =>
+            Util.NewNumericId(maxLength);
+        
     }
 }
