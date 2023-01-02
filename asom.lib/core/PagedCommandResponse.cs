@@ -87,4 +87,9 @@ namespace asom.lib.core
             };
         }
     }
+    public class PagedCachedResultContainer<T>
+    {
+        public PagedCommandResponse<T> PagedData { get; set; }
+        public int TotalRecord { get; set; }
+    }
 }

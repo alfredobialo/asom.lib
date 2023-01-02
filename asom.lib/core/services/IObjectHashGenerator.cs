@@ -3,7 +3,7 @@ using System.Security.Cryptography;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace DataLookupService.Business.Services
+namespace asom.lib.core.services
 {
     public interface IObjectHashGenerator
     {
