@@ -15,8 +15,8 @@ namespace asom.lib.core.util
 
         public DateRange(DateTime? startDate, DateTime? endDate)
         {
-            if (startDate != null) st = startDate.Value.Date;
-            if (endDate != null) end = endDate.Value.Date.AddHours(23);
+            if (startDate != null) st = startDate.Value;
+            if (endDate != null) end = StartDate.Value.Date.AddHours(24).AddMinutes(-10);
             if (st > end)
             {
                 st = end;
@@ -101,14 +101,14 @@ namespace asom.lib.core.util
         public static DateRange Today()
         {
             // Get the DateRange for the first Quarter of the given year
-            DateRange res = new DateRange(DateTime.Today, DateTime.Today.AddHours(23));
+            DateRange res = new DateRange(DateTime.UtcNow, DateTime.UtcNow.AddHours(24).AddMinutes(-10));
             return res;
         }
 
         public static DateRange Yesterday()
         {
             // Get the DateRange for the first Quarter of the given year
-            var d = DateTime.Today.AddDays(-1);
+            var d = DateTime.UtcNow.AddDays(-1);
             DateRange res = new DateRange();
             res.StartDate = d;
             res.EndDate = d.AddHours(23);
