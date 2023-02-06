@@ -23,7 +23,7 @@ namespace asom.lib.core.util
             }
         }
 
-        DateTime? st = DateTime.Today, end = DateTime.Today.AddHours(23);
+        DateTime? st = DateTime.UtcNow.Date, end = DateTime.UtcNow.Date.AddHours(24).AddMinutes(-5);
 
         public DateTime? StartDate
         {
@@ -40,7 +40,7 @@ namespace asom.lib.core.util
 
         public static DateRange CurrentMonth()
         {
-            DateRange res = DateRange.GetForMonth((MonthsOfTheYear)DateTime.Today.Month);
+            DateRange res = DateRange.GetForMonth((MonthsOfTheYear)DateTime.UtcNow.Date.Month);
             return res;
         }
 
@@ -101,14 +101,14 @@ namespace asom.lib.core.util
         public static DateRange Today()
         {
             // Get the DateRange for the first Quarter of the given year
-            DateRange res = new DateRange(DateTime.UtcNow, DateTime.UtcNow.AddHours(24).AddMinutes(-10));
+            DateRange res = new DateRange(DateTime.UtcNow.Date, DateTime.UtcNow.Date.AddHours(24).AddMinutes(-5));
             return res;
         }
 
         public static DateRange Yesterday()
         {
             // Get the DateRange for the first Quarter of the given year
-            var d = DateTime.UtcNow.AddDays(-1);
+            var d = DateTime.UtcNow.Date.AddDays(-1);
             DateRange res = new DateRange();
             res.StartDate = d;
             res.EndDate = d.AddHours(23);
