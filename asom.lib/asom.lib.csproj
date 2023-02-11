@@ -12,7 +12,7 @@
         <PackageTags>basic lib, asom, lib, utils, util</PackageTags>
         <PackageReleaseNotes>This release is just for basic Utility class and basic Foundation class</PackageReleaseNotes>
         <Company>Asom Services Inc</Company>
-        <AssemblyVersion>1.0.0.15</AssemblyVersion>
+        <AssemblyVersion>1.0.0.17</AssemblyVersion>
         <FileVersion>1.1 Pre</FileVersion>
         <SignAssembly>true</SignAssembly>
         <AssemblyOriginatorKeyFile>asomKey.snk</AssemblyOriginatorKeyFile>
@@ -20,7 +20,7 @@
         <PackageProjectUrl>https://github.com/alfredobialo/asom.lib</PackageProjectUrl>
         <RepositoryUrl>https://github.com/alfredobialo/asom.lib</RepositoryUrl>
         <RepositoryType>Public</RepositoryType>
-        <PackageVersion>1.0.15</PackageVersion>
+        <PackageVersion>1.0.17</PackageVersion>
     </PropertyGroup>
 
     <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">

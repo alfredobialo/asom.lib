@@ -16,7 +16,7 @@ namespace asom.lib.core.util
         public DateRange(DateTime? startDate, DateTime? endDate)
         {
             if (startDate != null) st = startDate.Value;
-            if (endDate != null) end = StartDate.Value.Date.AddHours(24).AddMinutes(-10);
+            if (endDate != null) end = endDate.Value;
             if (st > end)
             {
                 st = end;

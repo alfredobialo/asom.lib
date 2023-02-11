@@ -14,16 +14,14 @@ namespace asom.lib.core.util
 
         public static string NewId(int maxLength)
         {
-            string id = Guid.NewGuid().ToString().Replace("-", "").ToLower();
-            id = id.Substring(0, 4) + id.Substring(7, 6);
-
-            if (id.Length < maxLength)
+            string id = NewId();
+            while (id.Length < maxLength)
             {
-                string id2 = Guid.NewGuid().ToString().Replace("-", "").ToLower();
-                var remaining = maxLength - id.Length;
-                id += id2.Substring(3, remaining);
+                id += NewId();
             }
-
+            // trim to maxlength
+            id = id.Length > maxLength ? id.Substring(0, maxLength) : id;
+            
             return id;
         }
 
@@ -40,14 +38,13 @@ namespace asom.lib.core.util
 
         public static string NewNumericId(int maxLength)
         {
-            string id = Guid.NewGuid().ToString().Replace("-", "").ToLower();
-            // remove alphabets
-            id = string.Concat(id.Where(x => char.IsDigit(x)));
-            int len = id.Length;
-            var date = $"{DateTime.UtcNow.Millisecond}{DateTime.UtcNow.Minute}{DateTime.UtcNow.Month}";
-            
-            id = id.Substring(0, len >= maxLength ? maxLength : len);
-            if (id.Length < maxLength) id += date;
+           string id = NewNumericId();
+            while (id.Length < maxLength)
+            {
+                id += NewNumericId();
+            }
+            // trim to maxlength
+            id = id.Length > maxLength ? id.Substring(0, maxLength) : id;
             
             return id;
         }

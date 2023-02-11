@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "asom.lib", "asom.lib\asom.lib.csproj", "{47EEC265-FC67-4814-8C29-6348F31E7C50}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{6E835EB8-6054-4428-A950-DBAE032A45DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibTest", "LibTest\LibTest.csproj", "{1427FFF8-1A46-433F-8FA5-DFE1116D50E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,12 @@ Global
 		{47EEC265-FC67-4814-8C29-6348F31E7C50}.Release|Any CPU.Build.0 = Release|Any CPU
 		{47EEC265-FC67-4814-8C29-6348F31E7C50}.Debug|Any CPU.ActiveCfg = Release|Any CPU
 		{47EEC265-FC67-4814-8C29-6348F31E7C50}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{1427FFF8-1A46-433F-8FA5-DFE1116D50E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1427FFF8-1A46-433F-8FA5-DFE1116D50E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1427FFF8-1A46-433F-8FA5-DFE1116D50E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1427FFF8-1A46-433F-8FA5-DFE1116D50E7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1427FFF8-1A46-433F-8FA5-DFE1116D50E7} = {6E835EB8-6054-4428-A950-DBAE032A45DF}
 	EndGlobalSection
 EndGlobal
