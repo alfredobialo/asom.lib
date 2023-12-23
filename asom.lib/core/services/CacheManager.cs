@@ -52,18 +52,17 @@ namespace asom.lib.core.services
             return true;
         }
 
-        public async Task Set(string cacheKey, T item, TimeSpan duration, bool withAbsoluteExpiring = false)
+        public async Task Set(string cacheKey, T item, TimeSpan duration, bool withAbsoluteExpiring = true)
         {
             if (string.IsNullOrEmpty(cacheKey) || item == null)
                 return;
             cacheKey = formatCacheKey(cacheKey);
             var serializeObject = JsonConvert.SerializeObject(item);
 
-            var options = new DistributedCacheEntryOptions().SetSlidingExpiration(duration);
+            var options = new DistributedCacheEntryOptions();
 
-            if (withAbsoluteExpiring)
-                options = options.SetAbsoluteExpiration(duration);
-
+            options = withAbsoluteExpiring ? options.SetAbsoluteExpiration(duration) : options.SetSlidingExpiration(duration);
+            
             _logger.LogInformation(
                 $"Set Cache item called with Key :{cacheKey}, for type {(typeof(T))}. Duration :{duration}, with absolute expiration set to : {withAbsoluteExpiring}");
 
