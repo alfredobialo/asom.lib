@@ -100,6 +100,18 @@ namespace asom.lib.core
                 Code = statusCode
             };
         }
+        public CommandResponse<TData> ToTransformedData<TData>( TData data)
+        {
+            return new CommandResponse<TData>()
+            {   
+                Data = data,
+                Message = Message,
+                Success =  Success,
+                Code = Code,
+                Errors = Errors
+                
+            };
+        }
 
         public CommandResponse<T1> CloneWith<T1>(T1 value = default)
         {

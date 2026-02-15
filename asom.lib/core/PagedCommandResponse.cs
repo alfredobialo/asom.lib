@@ -58,6 +58,39 @@ namespace asom.lib.core
                 ? source.Skip<TSource>(this.PageSize * (this.CurrentPage - 1)).Take<TSource>(this.PageSize)
                 : source;
         }
+        public string SetSqlDbPagerConfig(PagedDataCriteria criteria, string sql,int dbRowCount)
+        {
+            CurrentPage = criteria.CurrentPage;
+            PageSize = criteria.PageSize;
+            UsePagination = criteria.UsePagination;
+            Criteria = criteria;
+            _totalRecord = dbRowCount;
+            string sqlOffset  = $" OFFSET {PageSize * (CurrentPage - 1)} ROWS FETCH NEXT {PageSize} ROWS ONLY";
+            
+            //check for semi colon : ; (line Termination token)
+            /*if (sql.EndsWith(";"))
+            {
+
+            }*/
+            return sql + sqlOffset;
+        }
+        public PagedCommandResponse<TData> ToTransformedData<TData>( TData data)
+        {
+            return new PagedCommandResponse<TData>()
+            {   
+                Data = data,
+                Message = Message,
+                Success =  Success,
+                Code = Code,
+                Errors = Errors,
+                CurrentPage = CurrentPage,
+                PageSize = PageSize,
+                UsePagination =  UsePagination,
+                TotalRecord =  TotalRecord
+                
+            };
+        }
+        
 
         public static PagedCommandResponse<T> ExceptionThrown(Exception err, int statusCode = (int) HttpStatusCode.InternalServerError, string environment = "Development")
         {
